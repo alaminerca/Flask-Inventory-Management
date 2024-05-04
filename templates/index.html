@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url("{{ url_for('static', filename='image/image1.jpg') }}");
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 32px;
+            text-align: center;
+            animation: slideInDown 2s ease;
+        }
+        p {
+            margin: 10px 0;
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Inventory Management System</h1>
+    <p><a href="{{ url_for('register') }}">No account? Click here to Sign Up</a></p>
+    <p><a href="{{ url_for('login') }}">Click here to Sign in</a></p>
+</body>
+</html>
